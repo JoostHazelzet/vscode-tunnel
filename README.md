@@ -18,14 +18,15 @@ sudo docker build -t vscode-tunnel-custom .
 ```
 sudo docker run -d --name vscode-tunnel \
   -v vscode-tunnel:/volume1/docker \
+  -v /volume1/docker:/docker-data \
   -p 8080:8080 \
   vscode-tunnel-custom
 ```
-- Authenticate and Start the Tunnel:
+- Authenticate and Start the Tunnel. Deatls can be found the container logs:
 ```
 sudo docker logs -f vscode-tunnel
 ```
-
+- Open folder `docker-data` which is mounted to `/volume1/docker`.
 
 ## Overview
 
