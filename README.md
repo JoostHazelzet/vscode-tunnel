@@ -3,6 +3,17 @@
 ## Changes by Joost
 
 I changed `entrypoint.sh` and added `--name synology` to the tunnel command.
+Next:
+- Clone to Synology NAS (/Volume1/docker): `git clone https://github.com/JoostHazelzet/vscode-tunnel.git` and `cd vscode-tunnel`.
+- Build the custom image `sudo docker build -t vscode-tunnel-custom .`. This takes a few minutes.
+- Start the container using this custom image:
+```sudo docker run -d --name vscode-tunnel \
+  -v vscode-tunnel:/volume1/docker \
+  -p 8080:8080 \
+  vscode-tunnel-custom
+```
+- Authenticate and Start the Tunnel: `sudo docker logs -f vscode-tunnel`
+
 
 ## Overview
 
