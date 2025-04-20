@@ -2,7 +2,7 @@
 
 ## Changes by Joost
 
-I changed `entrypoint.sh` and added `--nme synology` to the tunnel command.
+I changed `entrypoint.sh` and added `--name synology` to the tunnel command.
 
 ## Overview
 
