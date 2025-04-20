@@ -10,7 +10,7 @@ Next:
 git clone https://github.com/JoostHazelzet/vscode-tunnel.git`
 cd vscode-tunnel
 ```
-- Build the custom image which takes 10-20 minutes:
+- Build the custom image which takes 20-30 minutes and ends with final line 'Successfully tagged vscode-tunnel-customer:latest':
 ```
 sudo docker build -t vscode-tunnel-custom .
 ```
