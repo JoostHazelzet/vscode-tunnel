@@ -2,7 +2,7 @@
 
 if [ $# -eq 0 ]; then
     echo "Starting tunnel ..."
-    code tunnel --accept-server-license-terms &
+    code tunnel --name synology --accept-server-license-terms &
     PID=$!
     trap "kill $PID" SIGINT SIGTERM
     wait $PID
