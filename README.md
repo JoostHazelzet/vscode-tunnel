@@ -1,5 +1,11 @@
 # VS Code Tunnel Docker image
 
+## Changes by Joost
+
+I changed `entrypoint.sh` and added `--nme synology` to the tunnel command.
+
+## Overview
+
 This container image includes the **VS Code CLI** along with useful build dependencies and tools (Git, Java, Maven, NodeJS, Python, Docker CLI, kubectl, helm, gcloud, ...).
 
 When run without arguments, it will automatically start in [tunnel mode](https://code.visualstudio.com/docs/remote/tunnels) and await authentication. Make sure to check the logs if you are running it in the background and follow the displayed instructions.
