@@ -10,7 +10,7 @@ Changes:
 ![Screenshot of File Station](screenshot.png)
 
 
-Next:
+### Deployment
 - Clone to Synology NAS (/Volume1/docker):
 ```
 git clone https://github.com/JoostHazelzet/vscode-tunnel.git`
