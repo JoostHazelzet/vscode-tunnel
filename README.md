@@ -7,7 +7,7 @@ Changes:
 2. file `dockerfile` changed USER_UID to 1034 (Synology superuser) because docker-data (/volume1/docker) was readonly.
 3. Share docker (/volume1/docker) had different permission. Using the Synology GUI, select 'File Station, next right-click 'docker' share for properties. Slect the 'Permissions' tab and tick the 'Apply to this folder, sub-folders and files' and Save. The Tunnel got read and write rights after I applied 2 and 3. I also noticed ContainerManager as user:
 
-
+![Screenshot of File Station](screenshot.png)
 
 
 Next:
