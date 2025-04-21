@@ -18,7 +18,7 @@ sudo docker build -t vscode-tunnel-custom .
 ```
 sudo docker run -d --name vscode-tunnel \
   -v vscode-tunnel:/volume1/docker \
-  -v /volume1/docker:/docker-data \
+  -v /volume1/docker:/docker-data:rw \
   -p 8080:8080 \
   vscode-tunnel-custom
 ```
