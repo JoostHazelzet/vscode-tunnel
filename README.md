@@ -2,7 +2,13 @@
 
 ## Changes by Joost
 
-I changed `entrypoint.sh` and added `--name synology` to the tunnel command.
+Changes: 
+1. file `entrypoint.sh` and added `--name synology` to the tunnel command.
+2. file `dockerfile` changed USER_UID to 1034 (Synology superuser) because docker-data (/volume1/docker) was readonly.
+3. Share docker (/volume1/docker) had different permission. Using the Synology GUI, select 'File Station, next right-click 'docker' share for properties. Slect the 'Permissions' tab and tick the 'Apply to this folder, sub-folders and files' and Save. The Tunnel got read and write rights after I applied 2 and 3. I also noticed ContainerManager as user:
+
+
+
 
 Next:
 - Clone to Synology NAS (/Volume1/docker):
@@ -17,13 +23,12 @@ sudo docker build -t vscode-tunnel-custom .
 - Start the container using this custom image:
 ```
 sudo docker run -d --name vscode-tunnel \
-  --user 100:101 \
   -v vscode-tunnel:/volume1/docker \
   -v /volume1/docker:/docker-data:rw \
   -p 8080:8080 \
   vscode-tunnel-custom
 ```
-- Authenticate and Start the Tunnel. Deatls can be found the container logs:
+- Authenticate and Start the Tunnel. Details can be found the container logs:
 ```
 sudo docker logs -f vscode-tunnel
 ```
