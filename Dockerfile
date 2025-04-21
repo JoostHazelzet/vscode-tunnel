@@ -60,8 +60,8 @@ RUN VSCODE_CLI_URL=$(curl -sSLf "https://update.code.visualstudio.com/api/versio
 # Copy files
 COPY entrypoint.sh /entrypoint.sh
 
-# Create user
-ARG USER_UID=1000
+# Create user, USER_UID=1034 is the superadmin account.
+ARG USER_UID=1034
 ARG USER_GID=100
 RUN userdel ubuntu && rm -Rf /home/ubuntu && useradd -o -s /bin/bash -u ${USER_UID} -g ${USER_GID} -m vscode
 USER ${USER_UID}
